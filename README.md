@@ -39,7 +39,7 @@ cheerio - Utilisé pour le scraping
 ### Versioning
 Nous utilisons SemVer pour le versionnage.
 
-### Auteurs
+### Auteur
 Gouman Christophe 
 
 ### Licence
