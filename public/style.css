@@ -1,0 +1,110 @@
+/* Stylisation de base applicable à tous les appareils */
+
+h1 {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    font-family: "Rakkas", serif;
+    justify-content: center;
+    background-color: #585555bf;
+    color: white;
+}
+body {
+    background-image: url("/img/fond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#template {
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+    
+    
+}
+
+#content {
+    font-family: "Lobster", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: aliceblue;
+    filter: drop-shadow(4px 8px 16px #000000);
+}
+
+#author {
+    align-self: flex-end;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+.guillemet {
+    font-family: "Palanquin", sans-serif;
+    display :flex;
+    flex-direction: row;
+    font-size: 10vw;
+    color: white;
+}
+
+#guil1 {
+    align-self: flex-start;
+    margin: -20px;
+    margin-bottom: -20px;
+}
+#guil2 {
+    display: flex; /* Assure que guil2 est un conteneur flex */
+    flex-direction: row-reverse; /* Inverse l'ordre des éléments fils en ligne */
+    align-self: flex-end; /* Garde l'élément à la fin du conteneur flex parent */
+    margin: -20px;
+    margin-bottom: -20px;
+}
+
+
+/* Adaptations pour les tablettes */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #content {
+        font-size: 40px;
+        /* Réduit la taille de la police pour les petits écrans */
+    }
+
+    .guillemet {
+        font-size: 60px;
+    }
+}
+
+/* Adaptations pour les mobiles */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    #content {
+        font-size: 30px;
+        /* Taille de police encore plus petite pour les écrans très petits */
+    }
+
+    #author {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Alignement à gauche pour l'auteur */
+        padding: 10px;
+    }
+
+    .guillemet {
+        font-size: 50px;
+    }
+}

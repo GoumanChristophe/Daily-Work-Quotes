@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Citation Du jour Travail</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+        <h1 id="titre">Daily Work Quotes</h1>
+    </header>
+    <div id="template">
+        <div id="citation">
+            <div class="guillemet" id="guil1">&ldquo;</div>
+            <div id="content"></div>
+            <div class="guillemet" id="guil2">&rdquo;</div>
+        </div><br>
+        <div id="author"></span></div>
+    </div>
+    <script>
+
+        function updateContent() {
+            fetch('http://localhost:4000/json')
+                .then(response => response.json())
+                .then(data => {
+                    function getRandom(min, max) {
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+
+                    const randomIndex = getRandom(0, data.length - 1);
+                    const randomItem = data[randomIndex];
+
+
+                    document.getElementById('content').innerHTML = randomItem.content;
+                    document.getElementById('author').innerHTML = 'Auteur: ' + randomItem.author;
+
+                    console.log(randomItem);
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération du JSON:', error);
+                });
+        }
+        updateContent();
+        setInterval(updateContent, 86400000);
+
+    </script>
+</body>
+
+</html>
