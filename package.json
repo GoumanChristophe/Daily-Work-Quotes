@@ -8,12 +8,21 @@
   },
   "author": "Lionbreaker",
   "license": "MIT",
-   "dependencies": {
+  "dependencies": {
     "axios": "^1.6.8",
     "cheerio": "^1.0.0-rc.12",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
+    "got": "^14.2.1",
     "node": "^21.7.1",
-    "nodemon": "^3.1.0"
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0",
+    "nodemon": "^3.1.0",
+    "oauth-1.0a": "^2.2.6",
+    "querystring": "^0.2.1",
+    "twitter": "^1.7.1",
+    "twitter-api-v2": "^1.16.1"
   }
 }
